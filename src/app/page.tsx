@@ -1,4 +1,5 @@
-import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors, Star } from "lucide-react";
 
 export default function Home() {
   return (
@@ -68,24 +69,31 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="relative mx-auto w-full max-w-lg aspect-square lg:max-w-none">
+            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent rounded-full blur-3xl" />
-              {/* This would be an image in production, using a placeholder styling block */}
-              <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl flex items-center justify-center">
-                 <div className="text-center p-8">
-                   <TreePine className="h-24 w-24 text-primary/40 mx-auto mb-4" />
-                   <p className="text-gray-500 font-medium">Lawn Care Excellence</p>
-                 </div>
-                 {/* Decorative elements */}
-                 <div className="absolute -bottom-6 -left-6 bg-[#1a1a1a] p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
-                    <div className="bg-green-500/20 p-3 rounded-full">
-                      <CheckCircle2 className="h-6 w-6 text-green-500" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Trusted in</p>
-                      <p className="font-bold text-white">Valdosta, GA</p>
-                    </div>
-                 </div>
+              <div className="relative w-full h-[420px] lg:h-[520px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <Image
+                  src="/Golden-landscape/images/hero-lawn.png"
+                  alt="Perfectly manicured lawn by Golden Landscaping LLC in Valdosta GA"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {/* Decorative badge */}
+                <div className="absolute bottom-6 left-6 bg-[#1a1a1a]/90 backdrop-blur-sm p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
+                  <div className="bg-green-500/20 p-3 rounded-full">
+                    <CheckCircle2 className="h-6 w-6 text-green-500" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Serving Valdosta &</p>
+                    <p className="font-bold text-white">30-Mile Radius</p>
+                  </div>
+                </div>
+                {/* Free estimates badge */}
+                <div className="absolute top-6 right-6 bg-primary text-black font-bold text-sm px-4 py-2 rounded-full shadow-lg">
+                  FREE Estimates!
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +130,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service Area Strip */}
+      <section className="py-12 bg-[#111111] border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-500 text-sm uppercase tracking-widest font-semibold mb-8">Proudly Serving These Communities</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Valdosta, GA", "Hahira, GA", "Lake Park, GA", "Lakeland, GA", "Nashville, GA", "Remerton, GA", "Morven, GA", "Barwick, GA", "Stockton, GA"].map((city) => (
+              <span key={city} className="flex items-center gap-1.5 px-4 py-2 bg-[#1a1a1a] border border-white/10 rounded-full text-sm text-gray-300 font-medium">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                {city}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,12 +167,18 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-[#222222] p-6 rounded-2xl text-center border border-white/5">
-                     <div className="text-4xl font-heading font-bold text-primary mb-2">30+</div>
-                     <div className="text-sm text-gray-400 font-medium">Mile Service Radius</div>
+                    <div className="text-4xl font-heading font-bold text-primary mb-2">30+</div>
+                    <div className="text-sm text-gray-400 font-medium">Mile Service Radius</div>
                   </div>
                   <div className="bg-[#222222] p-6 rounded-2xl text-center border border-white/5">
-                     <div className="text-4xl font-heading font-bold text-primary mb-2">100%</div>
-                     <div className="text-sm text-gray-400 font-medium">Free Estimates</div>
+                    <div className="text-4xl font-heading font-bold text-primary mb-2">100%</div>
+                    <div className="text-sm text-gray-400 font-medium">Free Estimates</div>
+                  </div>
+                  <div className="bg-[#222222] p-6 rounded-2xl text-center border border-white/5 col-span-2">
+                    <div className="flex justify-center gap-1 mb-2">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="h-6 w-6 text-primary fill-primary" />)}
+                    </div>
+                    <div className="text-sm text-gray-400 font-medium">5-Star Service Guarantee</div>
                   </div>
                 </div>
              </div>
@@ -213,31 +242,40 @@ export default function Home() {
             </div>
 
             <div className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/5">
-              <h3 className="text-2xl font-bold text-white mb-6">Request a Free Quote</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Request a Free Quote</h3>
+              <p className="text-gray-400 text-sm mb-6">We typically respond within a few hours during business hours.</p>
               <form action="mailto:goldenlandscaping26@gmail.com" method="GET" className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
-                  <input type="text" name="subject" required className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="John Doe" />
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-1">Full Name</label>
+                    <input type="text" name="subject" required className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="John Doe" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
+                    <input type="tel" name="phone" className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="(386) 000-0000" />
+                  </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-1">Service Needed</label>
                   <select name="service" className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
-                    <option>Lawn Mowing</option>
-                    <option>Tree Pruning / Shrub Trimming</option>
+                    <option>Lawn Mowing &amp; Edging</option>
+                    <option>Tree Pruning</option>
+                    <option>Shrub Trimming</option>
                     <option>Mulching</option>
                     <option>Yard Cleanup</option>
-                    <option>Other (Describe in email)</option>
+                    <option>Multiple Services</option>
+                    <option>Other</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Message</label>
-                  <textarea name="body" rows={4} className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Tell us about your property..." />
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Tell Us About Your Property</label>
+                  <textarea name="body" rows={4} className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Property size, frequency needed, specific concerns..." />
                 </div>
-                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
-                  Send Request <ChevronRight className="h-5 w-5" />
+                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-4 rounded-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                  Send My Free Quote Request <ChevronRight className="h-5 w-5" />
                 </button>
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  Clicking send will open your default email client.
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Or call us directly: <a href="tel:3868550292" className="text-primary hover:underline">(386) 855-0292</a>
                 </p>
               </form>
             </div>
