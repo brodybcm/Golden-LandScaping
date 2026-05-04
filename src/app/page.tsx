@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors, Star } from "lucide-react";
+import QuoteForm from "./components/QuoteForm";
 
 export default function Home() {
   return (
@@ -241,44 +242,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/5">
-              <h3 className="text-2xl font-bold text-white mb-2">Request a Free Quote</h3>
-              <p className="text-gray-400 text-sm mb-6">We typically respond within a few hours during business hours.</p>
-              <form action="mailto:goldenlandscaping26@gmail.com" method="GET" className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Full Name</label>
-                    <input type="text" name="subject" required className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
-                    <input type="tel" name="phone" className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="(386) 000-0000" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Service Needed</label>
-                  <select name="service" className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
-                    <option>Lawn Mowing &amp; Edging</option>
-                    <option>Tree Pruning</option>
-                    <option>Shrub Trimming</option>
-                    <option>Mulching</option>
-                    <option>Yard Cleanup</option>
-                    <option>Multiple Services</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Tell Us About Your Property</label>
-                  <textarea name="body" rows={4} className="w-full bg-[#222222] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Property size, frequency needed, specific concerns..." />
-                </div>
-                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-4 rounded-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                  Send My Free Quote Request <ChevronRight className="h-5 w-5" />
-                </button>
-                <p className="text-xs text-gray-500 text-center mt-2">
-                  Or call us directly: <a href="tel:3868550292" className="text-primary hover:underline">(386) 855-0292</a>
-                </p>
-              </form>
-            </div>
+            <QuoteForm />
           </div>
         </div>
       </section>
