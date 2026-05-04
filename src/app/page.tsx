@@ -194,7 +194,7 @@ export default function Home() {
               <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Get In Touch</h2>
               <h3 className="text-4xl font-heading font-bold text-white mb-6">Ready for a Better Lawn?</h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Contact Jaimen Diego and the team today for your free estimate. We'll evaluate your property and provide a competitive quote for our premium services.
+                Contact Jaime Diego and the team today for your free estimate. We'll evaluate your property and provide a competitive quote for our premium services.
               </p>
               
               <div className="space-y-6">
