@@ -261,7 +261,7 @@ export default function Home() {
           </p>
           <div className="flex gap-4">
             <a href="https://www.facebook.com/GoldenLandscapingLLC" className="text-gray-500 hover:text-primary transition-colors">Facebook</a>
-            <a href="#" className="text-gray-500 hover:text-primary transition-colors">Google Reviews</a>
+            <a href="https://www.google.com/maps/search/Golden+Landscaping+LLC+Valdosta+GA" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Google Reviews</a>
           </div>
         </div>
       </footer>
