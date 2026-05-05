@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/Golden-landscape",
+  // Custom domain: goldenlandscapingvaldosta.com (no basePath needed)
 };
 
 export default nextConfig;
