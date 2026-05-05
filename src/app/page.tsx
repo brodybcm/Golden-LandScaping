@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors, Star } from "lucide-react";
 import QuoteForm from "./components/QuoteForm";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -8,14 +9,14 @@ export default function Home() {
       {/* Header / Nav */}
       <header className="sticky top-0 z-50 bg-[#111111]/95 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 cursor-pointer">
             <div className="bg-primary/20 p-2 rounded-lg">
               <TreePine className="text-primary h-6 w-6" />
             </div>
             <span className="font-heading font-bold text-xl tracking-wide uppercase text-white">
               Golden<span className="text-primary">Landscaping</span>
             </span>
-          </div>
+          </a>
           <a
             href="tel:3868550292"
             className="hidden md:flex items-center gap-2 font-medium text-white hover:text-primary transition-colors"
@@ -265,6 +266,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <ScrollToTop />
     </main>
   );
 }
