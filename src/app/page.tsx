@@ -74,7 +74,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent rounded-full blur-3xl" />
               <div className="relative w-full h-[420px] lg:h-[520px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src="/Golden-landscape/images/hero-lawn.png"
+                  src="/images/hero-lawn.png"
                   alt="Perfectly manicured lawn by Golden Landscaping LLC in Valdosta GA"
                   fill
                   className="object-cover"
