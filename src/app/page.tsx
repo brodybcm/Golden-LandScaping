@@ -26,7 +26,7 @@ export default function Home() {
           </a>
           <a
             href="#contact"
-            className="bg-primary hover:bg-primary/90 text-black font-semibold px-3 py-2 text-sm sm:px-6 sm:py-2.5 sm:text-base rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] whitespace-nowrap flex-shrink-0"
+            className="bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           >
             Get a Free Quote
           </a>
