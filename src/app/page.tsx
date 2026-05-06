@@ -261,7 +261,8 @@ export default function Home() {
             &copy; {new Date().getFullYear()} Golden Landscaping LLC. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/GoldenLandscapingLLC" className="text-gray-500 hover:text-primary transition-colors">Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=61589055429507" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/goldenlandscapingvaldosta" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Instagram</a>
             <a href="https://www.google.com/maps/search/Golden+Landscaping+LLC+Valdosta+GA" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Google Reviews</a>
           </div>
         </div>
