@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen" id="top">
       {/* Header / Nav */}
-      <header className="sticky top-0 left-0 z-50 w-full max-w-[100vw] overflow-hidden bg-[#111111]/95 backdrop-blur-sm border-b border-white/10">
+      <header className="sticky top-0 left-0 z-50 w-full bg-[#111111]/95 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <a href="#top" className="flex items-center gap-2 cursor-pointer">
             <div className="bg-primary/20 p-2 rounded-lg">
@@ -26,7 +26,7 @@ export default function Home() {
           </a>
           <a
             href="#contact"
-            className="bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+            className="bg-primary hover:bg-primary/90 text-black font-semibold px-3 py-2 text-sm sm:px-6 sm:py-2.5 sm:text-base rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] whitespace-nowrap flex-shrink-0"
           >
             Get a Free Quote
           </a>
