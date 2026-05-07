@@ -188,6 +188,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 border-t border-white/5 bg-[#111111]" id="faq">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Common Questions</h2>
+            <h3 className="text-4xl font-heading font-bold text-white mb-4">Frequently Asked Questions</h3>
+            <p className="text-gray-400">Everything you need to know about our services and process.</p>
+          </div>
+          <div className="space-y-6">
+            {[
+              { q: "What areas do you serve?", a: "We proudly serve Valdosta, GA, and the surrounding communities within a 30-mile radius, including Hahira, Lake Park, and Lakeland." },
+              { q: "Do you offer free estimates?", a: "Yes, we provide 100% free, no-obligation estimates. Contact us today, and we'll evaluate your property and provide a competitive quote." },
+              { q: "What landscaping services do you provide?", a: "Our services include precision lawn mowing, edging, tree pruning, shrub trimming, mulching, weed control, and comprehensive yard cleanups." },
+              { q: "Are you a locally owned business?", a: "Yes, Golden Landscaping LLC is proudly locally owned and operated right here in Valdosta, dedicated to serving our community." },
+              { q: "Do you handle seasonal yard cleanups?", a: "Absolutely. We offer specialized seasonal cleanups, which cover overgrown property clearing, leaf removal, and general debris cleanup to keep your yard looking its best year-round." }
+            ].map((faq, i) => (
+              <div key={i} className="bg-[#1a1a1a] p-6 rounded-2xl border border-white/5">
+                <h4 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                  <span className="text-primary">Q:</span> {faq.q}
+                </h4>
+                <p className="text-gray-400 pl-7 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-24 bg-[#161616] border-t border-white/5" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
