@@ -290,6 +290,7 @@ export default function Home() {
           <div className="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61589055429507" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Facebook</a>
             <a href="https://www.instagram.com/goldenlandscapingvaldosta" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Instagram</a>
+            <a href="https://www.tiktok.com/@goldenlandscapevaldosta" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">TikTok</a>
             <a href="https://g.page/r/CTQLqS-b_uCyEAI/review" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">Google Reviews</a>
           </div>
         </div>
