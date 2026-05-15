@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors, Star } from "lucide-react";
 import QuoteForm from "./components/QuoteForm";
 import ScrollToTop from "./components/ScrollToTop";
+import ProjectsPreview from "./components/ProjectsPreview";
 
 export default function Home() {
   return (
@@ -16,6 +17,12 @@ export default function Home() {
             <span className="font-heading font-bold text-xl tracking-wide uppercase text-white">
               Golden<span className="text-primary">Landscaping</span>
             </span>
+          </a>
+          <a
+            href="/projects"
+            className="hidden md:flex items-center gap-2 font-medium text-white hover:text-primary transition-colors"
+          >
+            Our Work
           </a>
           <a
             href="tel:3868550292"
@@ -146,6 +153,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProjectsPreview />
 
       {/* Why Us Section */}
       <section className="py-24 relative overflow-hidden">
