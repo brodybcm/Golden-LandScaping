@@ -3,6 +3,7 @@ import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, Tr
 import QuoteForm from "./components/QuoteForm";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectsPreview from "./components/ProjectsPreview";
+import MobileNav from "./components/MobileNav";
 
 export default function Home() {
   return (
@@ -33,10 +34,11 @@ export default function Home() {
           </a>
           <a
             href="#contact"
-            className="bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+            className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           >
             Get a Free Quote
           </a>
+          <MobileNav />
         </div>
       </header>
 

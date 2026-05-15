@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, TreePine, Phone, Play } from "lucide-react";
+import MobileNav from "../components/MobileNav";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 const redBrickPhotos = Array.from({ length: 16 }, (_, i) => ({
@@ -42,11 +43,14 @@ const allItems = [
   ...whiteHouseVideos,
 ];
 
+const PAGE_SIZE = 24;
+
 type Tab = "All" | "Lawn Restoration" | "Property Cleanup";
 
 // ─── Component ──────────────────────────────────────────────────────────────
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState<Tab>("All");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered =
@@ -54,23 +58,27 @@ export default function ProjectsPage() {
       ? allItems
       : allItems.filter((item) => item.job === activeTab);
 
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
   const photoItems = filtered.filter((i) => i.type === "photo");
-  const lightboxPhotos = photoItems; // lightbox navigates photos only
+  const lightboxPhotos = photoItems;
+
+  function handleTabChange(tab: Tab) {
+    setActiveTab(tab);
+    setVisibleCount(PAGE_SIZE); // reset pagination on tab change
+  }
 
   function openLightbox(src: string) {
     const idx = lightboxPhotos.findIndex((p) => p.src === src);
     if (idx !== -1) setLightboxIndex(idx);
   }
 
-  function closeLightbox() {
-    setLightboxIndex(null);
-  }
-
+  function closeLightbox() { setLightboxIndex(null); }
   function prevPhoto() {
     if (lightboxIndex === null) return;
     setLightboxIndex((lightboxIndex - 1 + lightboxPhotos.length) % lightboxPhotos.length);
   }
-
   function nextPhoto() {
     if (lightboxIndex === null) return;
     setLightboxIndex((lightboxIndex + 1) % lightboxPhotos.length);
@@ -100,10 +108,11 @@ export default function ProjectsPage() {
           </a>
           <a
             href="/#contact"
-            className="bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all"
+            className="hidden md:inline-flex bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all"
           >
             Get a Free Quote
           </a>
+          <MobileNav />
         </div>
       </header>
 
@@ -129,7 +138,7 @@ export default function ProjectsPage() {
               <button
                 key={tab}
                 id={`tab-${tab.toLowerCase().replace(/\s+/g, "-")}`}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => handleTabChange(tab)}
                 className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all border ${
                   activeTab === tab
                     ? "bg-[#d4af37] text-black border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.35)]"
@@ -147,10 +156,10 @@ export default function ProjectsPage() {
       </section>
 
       {/* ── Gallery Grid ── */}
-      <section className="flex-1 pb-24 px-4">
+      <section className="flex-1 pb-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
-            {filtered.map((item, i) =>
+            {visible.map((item, i) =>
               item.type === "photo" ? (
                 <div
                   key={`photo-${i}`}
@@ -162,6 +171,7 @@ export default function ProjectsPage() {
                     alt={item.alt}
                     width={700}
                     height={525}
+                    loading="lazy"
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -176,7 +186,7 @@ export default function ProjectsPage() {
                     poster={item.poster}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     className="w-full h-auto rounded-xl"
                     aria-label={item.alt}
                   />
@@ -191,6 +201,22 @@ export default function ProjectsPage() {
           {filtered.length === 0 && (
             <p className="text-center text-gray-500 mt-20">No items found.</p>
           )}
+
+          {/* Load More */}
+          {hasMore && (
+            <div className="text-center mt-12">
+              <p className="text-gray-500 text-sm mb-4">
+                Showing {visible.length} of {filtered.length} items
+              </p>
+              <button
+                id="load-more-btn"
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold px-8 py-3.5 rounded-full transition-colors"
+              >
+                Load More
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -200,7 +226,6 @@ export default function ProjectsPage() {
           className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
-          {/* Close */}
           <button
             id="lightbox-close"
             onClick={closeLightbox}
@@ -209,8 +234,6 @@ export default function ProjectsPage() {
           >
             <X className="h-6 w-6" />
           </button>
-
-          {/* Prev */}
           <button
             id="lightbox-prev"
             onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
@@ -219,8 +242,6 @@ export default function ProjectsPage() {
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-
-          {/* Image */}
           <div
             className="relative w-full max-w-5xl max-h-[85vh] aspect-[4/3]"
             onClick={(e) => e.stopPropagation()}
@@ -234,8 +255,6 @@ export default function ProjectsPage() {
               priority
             />
           </div>
-
-          {/* Next */}
           <button
             id="lightbox-next"
             onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
@@ -244,8 +263,6 @@ export default function ProjectsPage() {
           >
             <ChevronRight className="h-6 w-6" />
           </button>
-
-          {/* Counter */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-gray-400 text-sm bg-black/50 backdrop-blur-sm px-4 py-1.5 rounded-full">
             {lightboxIndex + 1} / {lightboxPhotos.length}
           </div>
