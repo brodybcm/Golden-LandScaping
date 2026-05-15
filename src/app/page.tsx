@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CheckCircle2, ChevronRight, MapPin, Phone, Mail, Clock, ShieldCheck, TreePine, Leaf, Scissors, Star } from "lucide-react";
 import QuoteForm from "./components/QuoteForm";
 import ScrollToTop from "./components/ScrollToTop";
+import ProjectGallery from "./components/ProjectGallery";
 
 export default function Home() {
   return (
@@ -146,6 +147,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProjectGallery />
 
       {/* Why Us Section */}
       <section className="py-24 relative overflow-hidden">
