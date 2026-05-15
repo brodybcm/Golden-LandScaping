@@ -34,7 +34,7 @@ export default function MobileNav() {
       {/* Backdrop */}
       {open && (
         <div
-          className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[60] bg-black/80 md:hidden"
           onClick={() => setOpen(false)}
           aria-hidden="true"
         />
@@ -42,13 +42,13 @@ export default function MobileNav() {
 
       {/* Slide-in drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 z-[70] bg-[#111111] border-l border-white/10 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-72 z-[70] bg-[#0a0a0a] border-l border-white/20 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Mobile navigation"
       >
         {/* Drawer header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-white/20 bg-[#0a0a0a]">
           <div className="flex items-center gap-2">
             <TreePine className="text-[#d4af37] h-5 w-5" />
             <span className="font-heading font-bold text-lg uppercase text-white">
@@ -58,7 +58,7 @@ export default function MobileNav() {
           <button
             id="mobile-nav-close"
             onClick={() => setOpen(false)}
-            className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+            className="p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             aria-label="Close navigation menu"
           >
             <X className="h-5 w-5" />
@@ -72,7 +72,7 @@ export default function MobileNav() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="flex items-center px-4 py-3.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 font-semibold transition-colors text-base"
+              className="flex items-center px-4 py-3.5 rounded-xl text-white hover:bg-white/10 font-semibold transition-colors text-base border border-transparent hover:border-white/10"
             >
               {link.label}
             </a>
@@ -80,7 +80,7 @@ export default function MobileNav() {
         </nav>
 
         {/* Bottom CTA */}
-        <div className="px-6 pb-8 pt-4 border-t border-white/10 space-y-3">
+        <div className="px-6 pb-8 pt-4 border-t border-white/20 bg-[#0a0a0a] space-y-3">
           <a
             href="tel:3868550292"
             onClick={() => setOpen(false)}
