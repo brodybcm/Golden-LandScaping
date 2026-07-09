@@ -99,12 +99,13 @@ export default function ProjectsPage() {
               Golden<span className="text-[#d4af37]">Landscaping</span>
             </span>
           </a>
+
           <a
-            href="tel:3868550292"
+            href="tel:2292690233"
             className="hidden md:flex items-center gap-2 font-medium text-white hover:text-[#d4af37] transition-colors"
           >
             <Phone className="h-5 w-5 text-[#d4af37]" />
-            (386) 855-0292
+            (229) 269-0233
           </a>
           <a
             href="/#contact"

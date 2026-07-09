@@ -26,12 +26,13 @@ export default function Home() {
             Our Work
           </a>
           <a
-            href="tel:3868550292"
+            href="tel:2292690233"
             className="hidden md:flex items-center gap-2 font-medium text-white hover:text-primary transition-colors"
           >
             <Phone className="h-5 w-5 text-primary" />
-            (386) 855-0292
+            (229) 269-0233
           </a>
+
           <a
             href="#contact"
             className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
@@ -72,12 +73,13 @@ export default function Home() {
                   <ChevronRight className="h-5 w-5" />
                 </a>
                 <a
-                  href="tel:3868550292"
+                  href="tel:2292690233"
                   className="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors"
                 >
                   <Phone className="h-5 w-5 text-primary" />
-                  (386) 855-0292
+                  (229) 269-0233
                 </a>
+
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
@@ -244,10 +246,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Call Us</h4>
-                    <p className="text-gray-400 mb-1">Primary: <a href="tel:3868550292" className="text-primary hover:underline">(386) 855-0292</a></p>
-                    <p className="text-gray-400">Secondary: <a href="tel:2292690233" className="text-primary hover:underline">(229) 269-0233</a></p>
+                    <p className="text-gray-400"><a href="tel:2292690233" className="text-primary hover:underline">(229) 269-0233</a></p>
                   </div>
                 </div>
+
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">

@@ -92,13 +92,13 @@ export default function MobileNav() {
           style={{ backgroundColor: "#0a0a0a" }}
         >
           <a
-            href="tel:3868550292"
+            href="tel:2292690233"
             onClick={() => setOpen(false)}
             className="flex items-center justify-center gap-2 w-full border border-white/20 text-white font-semibold px-6 py-3 rounded-full"
             style={{ backgroundColor: "#1a1a1a" }}
           >
             <Phone className="h-4 w-4 text-[#d4af37]" />
-            (386) 855-0292
+            (229) 269-0233
           </a>
           <a
             href="/#contact"

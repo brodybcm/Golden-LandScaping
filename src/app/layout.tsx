@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Golden Landscaping LLC | Premier Lawn Care in Valdosta, GA",
-  description: "Get top-quality lawn mowing, edging, mulching, and tree pruning in Valdosta, GA with Golden Landscaping LLC. Call (386) 855-0292 for your FREE estimate today!",
+  description: "Get top-quality lawn mowing, edging, mulching, and tree pruning in Valdosta, GA with Golden Landscaping LLC. Contact us for your FREE estimate today!",
 };
 
 export default function RootLayout({
@@ -29,7 +29,8 @@ export default function RootLayout({
     "image": "",
     "@id": "",
     "url": "",
-    "telephone": "+13868550292",
+
+    "telephone": "+12292690233",
     "email": "goldenlandscaping26@gmail.com",
     "address": {
       "@type": "PostalAddress",

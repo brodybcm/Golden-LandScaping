@@ -88,11 +88,12 @@ export default function QuoteForm() {
               Submit Another Request
             </button>
             <a
-              href="tel:3868550292"
+              href="tel:2292690233"
               className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary hover:bg-primary/90 text-black font-bold transition-all text-sm"
             >
-              Or Call Now: (386) 855-0292
+              Or Call Now: (229) 269-0233
             </a>
+
           </div>
         </div>
       </div>
@@ -205,9 +206,7 @@ export default function QuoteForm() {
         {selected.length === 0 && formState === "idle" && (
           <p className="text-xs text-gray-600 text-center -mt-2">Select at least one service above to continue</p>
         )}
-        <p className="text-xs text-gray-500 text-center">
-          Or call us directly: <a href="tel:3868550292" className="text-primary hover:underline">(386) 855-0292</a>
-        </p>
+
       </form>
     </div>
   );
