@@ -247,6 +247,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-[#0f0f0f] border-t border-white/5" id="reviews">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">What Customers Say</h2>
+            <h3 className="text-4xl font-heading font-bold text-white mb-4">Real Reviews from Real Neighbors</h3>
+            <div className="flex justify-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-primary fill-primary" />)}
+            </div>
+            <p className="text-gray-400">5-Star Rated on Google</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sharon Clegg",
+                review: "If I could give them 10 stars I would…. The best lawn care company I've ever worked with!!! They are very detailed and professional. 10000000/10",
+                initials: "SC"
+              },
+              {
+                name: "Tristan Penn",
+                review: "This team does a great job. They partner with you on your lawncare needs and execute! Pricing is fair for the quality of work. After a bad experience with my last lawncare team it's refreshing to have someone reliable that provides excellent service. I'll definitely be using them again!!",
+                initials: "TP"
+              },
+              {
+                name: "Emma S.",
+                review: "Golden Landscaping came out the same day I requested an estimate — I didn't expect that kind of turnaround. The crew listened carefully to what I needed done and got to work right away. They finished in about an hour and cleaned up completely. My lawn and yard looks great. Very reasonable pricing too. I'll definitely be calling them again. Thanks guys!",
+                initials: "ES"
+              }
+            ].map((t, i) => (
+              <div key={i} className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 flex flex-col gap-4 hover:border-primary/30 transition-colors">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, s) => <Star key={s} className="h-4 w-4 text-primary fill-primary" />)}
+                </div>
+                <p className="text-gray-300 leading-relaxed flex-1">&ldquo;{t.review}&rdquo;</p>
+                <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-primary/20 text-primary font-bold text-sm w-9 h-9 rounded-full flex items-center justify-center">
+                      {t.initials}
+                    </div>
+                    <span className="text-white font-semibold text-sm">{t.name}</span>
+                  </div>
+                  <span className="text-xs text-gray-500 font-medium">Google Review</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Golden+Landscaping+LLC+Valdosta+GA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm"
+            >
+              See all reviews on Google →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-24 bg-[#161616] border-t border-white/5" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
