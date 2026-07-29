@@ -101,11 +101,11 @@ export default function ProjectsPage() {
           </a>
 
           <a
-            href="tel:2292690233"
+            href="tel:2293003727"
             className="hidden md:flex items-center gap-2 font-medium text-white hover:text-[#d4af37] transition-colors"
           >
             <Phone className="h-5 w-5 text-[#d4af37]" />
-            (229) 269-0233
+            (229) 300-3727
           </a>
           <a
             href="/#contact"

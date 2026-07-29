@@ -30,7 +30,7 @@ export default function RootLayout({
     "@id": "",
     "url": "",
 
-    "telephone": "+12292690233",
+    "telephone": "+12293003727",
     "email": "goldenlandscaping26@gmail.com",
     "address": {
       "@type": "PostalAddress",

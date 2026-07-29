@@ -26,11 +26,11 @@ export default function Home() {
             Our Work
           </a>
           <a
-            href="tel:2292690233"
+            href="tel:2293003727"
             className="hidden md:flex items-center gap-2 font-medium text-white hover:text-primary transition-colors"
           >
             <Phone className="h-5 w-5 text-primary" />
-            (229) 269-0233
+            (229) 300-3727
           </a>
 
           {/* Social Icons — desktop only */}
@@ -92,11 +92,11 @@ export default function Home() {
                   <ChevronRight className="h-5 w-5" />
                 </a>
                 <a
-                  href="tel:2292690233"
+                  href="tel:2293003727"
                   className="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors"
                 >
                   <Phone className="h-5 w-5 text-primary" />
-                  (229) 269-0233
+                  (229) 300-3727
                 </a>
 
               </div>
@@ -265,7 +265,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Call Us</h4>
-                    <p className="text-gray-400"><a href="tel:2292690233" className="text-primary hover:underline">(229) 269-0233</a></p>
+                    <p className="text-gray-400"><a href="tel:2293003727" className="text-primary hover:underline">(229) 300-3727</a></p>
                   </div>
                 </div>
 
